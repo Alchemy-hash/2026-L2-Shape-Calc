@@ -1,3 +1,5 @@
+import math
+
 # Functions go here
 def int_check(question):
     """Checks users enter an integer"""
@@ -52,8 +54,8 @@ def string_check(question, valid_answers, num_letters):
 # Main Routine goes here
 
 # intialise variables / non-default options for string checker
-shape_ans = ("circle", "square", "triangle", "rectangle")
-format_ans = ("perimeter", "area")
+shape_ans = ["circle", "square", "triangle", "rectangle"]
+format_ans = ["perimeter", "area"]
 
 # loop for testing purposes...
 while True:
@@ -75,14 +77,12 @@ while True:
 
     if shape == "triangle" and format == "perimeter":
         dimensions3 = int_check("Third dimensions (for perimeter) of your shape: ")
-    else:
-        continue
+        perimeter_triangle = dimensions1 + dimensions2 + dimensions3
 
     # format calculations
     area = dimensions1 * dimensions2
     area_triangle = 0.5 * dimensions1 * dimensions2
     perimeter_square = dimensions1 + dimensions2
-    perimeter_triangle = dimensions1 + dimensions2 + dimensions3
     perimeter_rectangle = dimensions1 + dimensions2 * 2
 
     # to find area and print the result
