@@ -1,5 +1,8 @@
 import math
 
+# Minimum and maximum values allowed for measurements
+MIN_VALUE = 0.01
+MAX_VALUE = 3e8
 
 
 def instructions():
@@ -13,14 +16,14 @@ def instructions():
 
 
 def float_check(question):
-    """Runs until the user enters a positive number between 0.01 and 3e8."""
+    """Runs until the user enters a positive number between MIN_VALUE and MAX_VALUE."""
     while True:
         try:
             value = float(input(question))
-            if value < 0.01:
-                print("Sorry, this is too small. Please pick a number larger than 0.009.")
-            elif value > 3e8:
-                print("Sorry, this is too large. Please pick a number smaller than 3e9.")
+            if value < MIN_VALUE:
+                print(f"Sorry, this is too small. Please enter a number greater than or equal to {MIN_VALUE}.")
+            elif value > MAX_VALUE:
+                print(f"Sorry, this is too large. Please enter a number smaller than or equal to {MAX_VALUE}.")
             else:
                 return value
         except ValueError:
@@ -149,4 +152,3 @@ while True:
 
         print("\nGoodbye!")
         break
-
