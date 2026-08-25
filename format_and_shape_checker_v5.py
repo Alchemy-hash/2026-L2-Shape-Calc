@@ -1,6 +1,7 @@
 import math
 
 
+
 def instructions():
     print("""
 ~~~Instructions~~~
@@ -17,9 +18,9 @@ def float_check(question):
         try:
             value = float(input(question))
             if value < 0.01:
-                print("Sorry, this is too small. Please try again.")
+                print("Sorry, this is too small. Please pick a number larger than 0.009.")
             elif value > 3e8:
-                print("Sorry, this is too large. Please try again.")
+                print("Sorry, this is too large. Please pick a number smaller than 3e9.")
             else:
                 return value
         except ValueError:
